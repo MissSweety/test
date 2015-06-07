@@ -1,0 +1,44 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图片轮播切换效果</title>
+<script type="text/javascript" src="slider.js"></script>
+<style type="text/css">
+.banner {position:relative; width:286px; height:400px; overflow:hidden;margin:0 auto}
+.banner_bg {position:absolute; bottom:0;background-color:#000;height:30px;filter: Alpha(Opacity=30);opacity:0.3;z-index:1000;cursor:pointer; width:288px; }
+.banner_info{position:absolute; bottom:0; left:5px; line-height:30px;color:indianred;z-index:1001;text-decoration:none}
+.banner ul {position:absolute;list-style-type:none;z-index:1002;margin:0; padding:0; bottom:9px; right:5px;}
+.banner ul li {float:left;height:8px;width:8px;border-radius:10px;margin-left:5px;border:1px solid white;cursor:pointer;}
+.banner ul li.on{ background-color:white;}
+.banner_list img {border:0px;height:50%}
+.banner_list a{position:absolute; }
+
+
+</style>
+<script type="text/javascript" language="javascript">
+window.onload=function(){
+	//
+	picscroll.scroll(5,"banner_list","list","banner_info");
+}
+</script>
+</head>
+
+<body>
+<div id="banner" class="banner">
+	<div id="banner_bg" class="banner_bg"></div>  <!--标题背景-->
+	<a href="#" id="banner_info" class="banner_info"></a> <!--标题-->
+    <ul id="list"></ul><!--放小圆点按钮的-->
+   <div id="banner_list" class="banner_list">
+        <a href="#" target="_blank"><img src="imgs/onno.jpg" title="satoshi" alt="satoshi" /></a>
+        <a href="#" target="_blank"><img src="imgs/sho.jpg" title="sho" alt="sho" /></a>
+        <a href="#" target="_blank"><img src="imgs/aiba.jpg" title="aiba" alt="aiba" /></a>
+        <a href="#" target="_blank"><img src="imgs/nino.jpg" title="nino" alt="nino" /></a>
+       <a href="#" target="_blank"><img src="imgs/jun.jpg" title="jun" alt="jun" /></a>
+
+   </div>
+
+</div>
+
+</body>
+</html>
