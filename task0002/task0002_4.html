@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="task0002_4.css"/>
+</head>
+<body>
+<div class="suggest">
+    <div class="search">
+        <input type="text" class="searchin" id="searchtxt" name="search"/>
+    </div>
+    <div class="searchbtn">
+       <button class="btn" id="s_btn">百度一下</button>
+    </div>
+    <div class="hides" id="hidediv">jaldja
+    <ul>
+        <li>jldj</li>
+        <li>jldj</li>
+        <li>jldj</li>
+        <li>jldj</li>
+
+    </ul></div>
+
+</div>
+<script>
+    searchf= document.getElementById("searchtxt");
+    //searchf.onfocus = startSearch;
+    searchf.onkeyup = beginSearch;
+    var index=0;
+//    function startSearch(){
+//
+//        searchdiv.className="show";
+//    }
+    function beginSearch(event){
+        var searchdiv=document.getElementById("hidediv");
+        searchdiv.className="show";
+        var myEvent = event||window.event;
+        var keycode = myEvent.keyCode;
+        searchkeycode(keycode);
+
+        console.log(keycode);
+    }
+    function searchkeycode(n){
+
+        if (n==40){
+            var li = document.getElementById("hidediv").getElementsByTagName("li");
+
+            for(var j=0;j<li.length;j++){
+                if (j!=index){
+                    li[j].style.background="transparent";
+                }
+
+            }
+                li[index].style.background="blue";
+                index++;
+            if(index>li.length-1){
+                index=0;
+            }
+
+
+            console.log(li);
+
+
+        }
+    }
+
+</script>
+</body>
+</html>

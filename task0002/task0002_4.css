@@ -1,0 +1,9 @@
+.suggest{width:70%;margin:100px auto;overflow:hidden;padding:100px}
+.search{width:55%;height:34px;position:absolute;border:1px solid #222222}
+.search .searchin{width:100%;border:0;padding:1px;font-size:24px;background:forestgreen}
+
+.searchbtn{width:20%;margin-left:80%;}
+.searchbtn>.btn{color:white;font-size:20px;background:dodgerblue;width:100%;height:36px;border-radius:0px;border:none}
+.hides{display:none;}
+.show{display:block;background:transparent;width:80%;border:1px solid indianred;padding:0;color:mediumpurple}
+#hidediv ul>li{text-decoration: none;list-style:none;margin-left:-28px}

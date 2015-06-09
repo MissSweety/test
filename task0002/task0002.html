@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>task0002</title>
+
+    <script src="js/util.js"></script>
+</head>
+<body>
+<input id="number1" class="test1" type="text">
+<input id="number2" class="test2 test1 test3" type="text">
+<span id="result"></span>
+<button id="addbtn">click here to add value</button>
+<script>
+
+   function $(id){
+       return document.getElementById(id);
+   }
+   removeClass($("number1"),"test1");
+   removeClass($("number2"),"test3");
+   console.log(getele("#number1"));
+   console.log(getele(".test1"));
+   console.log(getele("span"));
+   function add(num1,num2){
+       return num1+num2;
+   }
+   function showResult(result){
+       $("result").innerHTML=result;
+   }
+   function addEventHandler(){
+       var num1=parseInt($("number1").value);
+       var num2=parseInt($("number2").value);
+       var result=add(num1,num2);
+       showResult(result);
+
+   }
+
+    function initEvent(){
+        $("addbtn").addEventListener("click", addEventHandler,false);
+    }
+    initEvent();
+    var test=[1,2,3];
+    var stringa="skjfkalsjfk"
+    console.log(isArray(stringa))
+    console.log(isArray(test));
+    console.log(isFunction(add));
+   var srcObj = {
+       a: 1,
+       b: {
+           b1: ["hello", "hi"],
+           b2: "JavaScript"
+       }
+   };
+   var abObj = srcObj;
+   var tarObj = cloneObject(srcObj);
+
+   srcObj.a = 2;
+   srcObj.b.b1[0] = "Hello";
+
+   console.log(abObj.a);// 2
+   console.log(abObj.b.b1[0]);//hello
+
+   console.log(tarObj.a);      // 1
+   console.log(tarObj.b.b1[1]);    // "hi"
+    var testa=[3,1,4,3,2,1,5];
+
+   var resulta=uniqArray(testa);
+
+    console.log("by uniqArray "+resulta);
+    var teststr=['sss','bbb','sss','aaab'];
+    console.log("by uniaqrray,str "+uniqArray(teststr));
+    var tests='  akl js     k     ';
+    var tests2='abcde';
+   var resultfortests=simpleTrim(tests);
+    console.log(tests+" "+tests.length);
+    console.log(resultfortests+" "+resultfortests.length);
+
+    console.log("to test cycle");
+    each(testa, showMess);
+   var obj = {
+       a: 1,
+       b: 2,
+       c: {
+           c1: 3,
+           c2: 4
+       }
+   };
+   console.log(getObjectLength(obj));
+    var email='23ajkiojijka';
+    var emailr='ajks@ksjakl.com';
+    var telephone='32048327389782789';
+    var telephone2 = '1329832905-';
+    var telephone3= '13343215367';
+    console.log(isEmail(email));
+    console.log(isEmail(emailr));
+    console.log(isMobilePhone(telephone));
+   console.log(isMobilePhone(telephone2));
+   console.log(isMobilePhone(telephone3));
+    console.log(isIE());
+
+</script>
+</body>
+</html>

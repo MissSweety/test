@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+    <script src="js/task0002_2.js"></script>
+</head>
+<body>
+请输入年月日：YYYY-MM-DD&nbsp;&nbsp;<input type="text" name="startime" id="st"/>
+<input type="button" value="开始计时" id="startbtn"/>
+<input type="button" value="停止计时" id="stopbtn"/>
+<div style="width:70%;text-align:center;background:cornflowerblue;color:white" id="message"></div>
+</body>
+<script>
+    var t;
+    var btn=document.getElementById("startbtn");
+    var sbtn=document.getElementById("stopbtn");
+    btn.addEventListener("click", startTimer,false);
+    sbtn.addEventListener("click", stopTimer,false);
+    function startTimer(){
+        var date=new Date();
+        var starttime=document.getElementById("st").value;
+        var startday = starttime.replace(/-/g,"/");
+        var startTime= new Date(startday);
+        var leavetime=startTime.getTime()-date.getTime();
+        var leave = parseInt(leavetime/1000);
+        var day = parseInt(leave/86400);
+        var hour = parseInt((leave-day*86400)/3600);
+        var minute =  parseInt((leave-day*86400-hour*3600)/60);
+        var second =  parseInt((leave-day*86400-hour*3600)%60);
+
+        console.log(message);
+        if(leavetime>=0) {
+            var message = day+"天"+hour+"小时"+minute+"分"+second+"秒";
+            document.getElementById("message").innerHTML=message;
+            t = setTimeout(startTimer, 1000);
+        }
+    }
+    function stopTimer(){
+        clearTimeout(t);
+    }
+
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>task0002_1</title>
+    <script src="js/util.js"></script>
+    <style>
+        .alert{
+            color:red;
+        }
+        .hi{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+<div style="top:0">爱好:&nbsp;</div>
+<textarea rows="5" cols="20" name="hobby" id="hobby" placeholder="输入您的爱好"></textarea>
+</br>
+<div id="alertf" ></div>
+<input type="button" id="btn" value="提交">
+<div id="result"></div>
+<script>
+    var btn = document.getElementById("btn");
+    btn.addEventListener("click",showresult,false);
+    var content=document.getElementById("hobby");
+    content.addEventListener("focus",resetf,false);
+    var hintf=document.getElementById("alertf");
+    function resetf(){
+        hintf.innerHTML="";
+    }
+    function showresult(){
+
+        var text=content.value;
+        if(text==""){
+            //hintf.style.color='red';
+            hintf.className=" alert";
+            hintf.innerHTML="您没有输入任何内容"
+            return null;
+        }
+        else {
+
+            var hobbies = text.split(/,|\s|;|、/);
+            if (hobbies.length < 10) {
+                var result = uniqArray(hobbies);
+               // console.log(result+"ooo");
+                var message = "";
+                for (var i in result) {
+                    message = message + "<input type='checkbox' checked='checked'>"+result[i] + '&nbsp;';
+                }
+                document.getElementById("result").innerHTML = message;
+            }
+            else {
+                hintf.className = "alert";
+                hintf.innerHTML = "您输入爱好过多，最多10个"
+                return null;
+            }
+        }
+    }
+</script>
+</body>
+</html>

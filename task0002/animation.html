@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>红条在黑条里来回往返</title>
+    <style>
+        .polling_message {
+            color: white;
+            float: left;
+            margin-right:2%;
+        }
+        .container{
+            background-color: black;
+            height: 50px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .redbar {
+            color: white;
+            height: 100%;
+            width:60%;
+            background-color: red;
+
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.9) 75%);
+            -webkit-animation: move_eye 2s linear 0s infinite normal;
+            -moz-animation: move_eye 2s linear 0s infinite alternate;
+            -o-animation: move_eye 2s linear 0s infinite alternate;
+            animation: move_eye 2s linear 0s infinite alternate;
+        }
+        @-webkit-keyframes move_eye {
+            from {
+                margin-left:-30%;
+            }
+            to {
+                margin-left:80%;
+            }
+        }
+        @-moz-keyframes move_eye {
+            from {
+                margin-left:0%;
+            }
+            to {
+                margin-left:40%;
+            }
+        }
+        @-o-keyframes move_eye {
+            from {
+                margin-left: 0%;
+            }
+            to {
+                margin-left:40%;
+            }
+        }
+        @keyframes move_eye {
+            from {
+                margin-left: 0%;
+            }
+            to {
+                margin-left:40%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="redbar">
+    </div>
+</div>
+
+</body>
+</html>
