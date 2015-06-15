@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--例如实现在弹出菜单中选择国家后，后面的菜单会出现该国家中的城市-->
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实现月份和日期的动态传递</title>
+</head>
+<body>
+<form action="#">
+    <select id="month">
+        <option value="">选择月份</option>
+        <option value="0">January</option>
+        <option value="1">February</option>
+        <option value="2">March</option>
+        <option value="3">April</option>
+        <option value="4">May</option>
+        <option value="5">June</option>
+
+
+    </select>
+    &nbsp;
+    <select id="day">
+        <option value="">day</option>
+    </select>
+</form>
+<div id="showmessage">
+
+</div>
+<script>
+    window.onload=init;
+    function init(){
+        document.getElementById("month").selectedIndex=0;
+        document.getElementById("month").onchange=popmonth;
+
+    }
+    function popmonth(){
+        var day=new Array(31,28,31,30,31,30);
+        var getMonthstr=this.options[this.selectedIndex].value;//get options's value,the value of month
+        if(getMonthstr!=""){
+            document.getElementById("day").options.length=0;//reset day's options to be 0 every click;
+            var monthint=parseInt(getMonthstr);
+            for(var i=0;i<day[monthint];i++){
+                document.getElementById("day").options[i]=new Option(i+1);//produce new option(value) for day options
+            }
+        }
+        /*var op=document.getElementById("month").options;
+        var y=op.selectedIndex+" "+document.getElementById("day").options.selectedIndex;
+        document.getElementById("showmessage").innerHTML=y;*/
+    }
+    </script>
+</body>
+
+</html>
