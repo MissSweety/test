@@ -30,11 +30,32 @@
                 ctx.fillText('happy face', 150, 100);
 
             }
+            var canvas1 = document.getElementById("canvas1");
+            var context = canvas1.getContext("2d");
+                var g1 = context.createLinearGradient(0, 0, 0, 300);
+                g1.addColorStop(0, 'rgb(255,0,0)'); //红
+                g1.addColorStop(0.5, 'rgb(255,255,0)');//绿
+                g1.addColorStop(1, 'rgb(0,255,255)'); //蓝
 
+                //可以把lg对象理解成GDI中线性brush
+                context.fillStyle = g1;
+                //再用这个brush来画正方形
+                context.fillRect(0, 0, 200, 300);
+                var g2 = context.createRadialGradient(300,150,0,300,150,50);
+                g2.addColorStop(0,"rgb(255,255,255)");//white
+                g2.addColorStop(1,"rgb(255,0,0)");
+                context.fillStyle = g2;
+                context.arc(300,150,50,0,Math.PI*2,false);
+                context.closePath();
+                context.fill();
         }
+
     </script>
 </head>
 <body onload="draw();">
-<canvas id="canvas" width="400" height="550"></canvas>
+<canvas id="canvas" width="400" height="550" title="笑脸"></canvas>
+
+<canvas id="canvas1" width="400" height="550" title="渐变">
+</canvas>
 </body>
 </html>
