@@ -1,0 +1,125 @@
+.drag{
+    width:100px;
+    height:100px;
+    background:lightcoral;
+
+}
+.drop{
+    border:1px solid #222;
+    width:200px;
+    height:200px;
+
+}
+.lefttop{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100px;
+    height:100px;
+    background:lightcoral;
+
+}
+.righttop{
+    position:absolute;
+    top:0;
+    right:0;
+    width:100px;
+    height:100px;
+    background:lightblue;
+
+}
+h1{
+    margin:20px auto;
+    text-align:center;
+    text-shadow: 3px 3px 5px #333;
+}
+.container{
+    width:85%;
+    height:600px;
+    margin:5% auto;
+    position:relative;
+}
+img{
+    padding:10px 10px 45px;
+    background:#fff;
+    border:1px solid #eee;
+    position:absolute;
+    transition:1s;
+    -webkit-transition:1s;
+    -moz-transition:1s;
+
+
+}
+img:hover{
+    transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    z-index:3;
+    box-shadow:5px 8px 10px #aaa; /*box-shadow:左右（负数为左） 上下（负数为上） 宽度（距离） 颜色*/
+}
+.p1{
+    top:40px;
+    left:120px;
+    transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+}
+.p2{
+    top:40px;
+    left:340px;
+    transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+}
+.p3{
+    top:40px;
+    left:500px;
+    transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+}
+.p4{
+    top:200px;
+    left:80px;
+    transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+}
+.p5{
+    top:180px;
+    left:240px;
+    transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+    -webkit-transform: rotate(6deg);
+}
+.p6{
+    top:210px;
+    left:450px;
+    transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+}
+.cover{
+    position: absolute;
+    width:100%;
+    height: 450px;
+    background: -webkit-gradient(radial,50% 50%,0,50% 50%,300,from(rgba(0,0,0,.2)),to(rgba(0,0,0,.9)));
+    z-index: 2;
+}
+.grayfont{
+    font-size: 153px;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: absolute;
+    color: rgb(80,80,80);
+    text-shadow:20px 20px 30px rgb(20,20,20);
+    z-index: -1;
+    padding: 20px auto;
+    top: 100px;
+    margin-left: 10%;
+
+}
+
+
