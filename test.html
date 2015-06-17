@@ -2,60 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <script type="application/javascript">
-        function draw() {
-            var canvas = document.getElementById("canvas");
-            if (canvas.getContext) {
-                var ctx = canvas.getContext("2d");
-                //draw red happy face with shadow
-                ctx.strokeStyle = "rgb(200,0,0)";
-                ctx.shadowBlur = 12;
-                ctx.shadowColor = "rgb(200,0,0)";
-                ctx.lineWidth = 5;
-                ctx.beginPath();
-                ctx.arc(75,75,50,0,Math.PI*2,true); // Outer circle
-                ctx.moveTo(110,75);
-                ctx.arc(75,75,35,0,Math.PI,false);   // Mouth (clockwise)
-                ctx.moveTo(65,65);
-                ctx.arc(60,65,5,0,Math.PI*2,true);  // Left eye
-                ctx.moveTo(95,65);
-                ctx.arc(90,65,5,0,Math.PI*2,true);  // Right eye
-                ctx.closePath();
-                ctx.stroke();
-                //write blue font with shadow
-                ctx.shadowBlur = 12;
-                ctx.shadowColor = "blue";
-                ctx.font = '40pt Calibri';
-                ctx.fillStyle = 'blue';
-                ctx.fillText('happy face', 150, 100);
-
-            }
-            var canvas1 = document.getElementById("canvas1");
-            var context = canvas1.getContext("2d");
-                var g1 = context.createLinearGradient(0, 0, 0, 300);
-                g1.addColorStop(0, 'rgb(255,0,0)'); //红
-                g1.addColorStop(0.5, 'rgb(255,255,0)');//绿
-                g1.addColorStop(1, 'rgb(0,255,255)'); //蓝
-
-                //可以把lg对象理解成GDI中线性brush
-                context.fillStyle = g1;
-                //再用这个brush来画正方形
-                context.fillRect(0, 0, 200, 300);
-                var g2 = context.createRadialGradient(300,150,0,300,150,50);
-                g2.addColorStop(0,"rgb(255,255,255)");//white
-                g2.addColorStop(1,"rgb(255,0,0)");
-                context.fillStyle = g2;
-                context.arc(300,150,50,0,Math.PI*2,false);
-                context.closePath();
-                context.fill();
-        }
-
-    </script>
 </head>
-<body onload="draw();">
-<canvas id="canvas" width="400" height="550" title="笑脸"></canvas>
-
-<canvas id="canvas1" width="400" height="550" title="渐变">
-</canvas>
+<body onload="draw20('canvas')">
+<canvas id="canvas" width="400" height="550"></canvas>
+<script src="js/drawcurve.js"></script>
 </body>
 </html>
