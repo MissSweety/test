@@ -1,48 +1,100 @@
-<!DOCTYPE html >
+<!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>arashi介绍</title>
-<script type="text/javascript" src="slider.js"></script>
-<style type="text/css">
-.banner {position:relative; width:286px; height:400px; overflow:hidden;margin:0 auto}
-.banner_bg {position:absolute; bottom:0;background-color:#000;height:30px;filter: Alpha(Opacity=30);opacity:0.3;z-index:1000;cursor:pointer; width:288px; }
-.banner_info{position:absolute; bottom:0; left:5px; line-height:30px;color:indianred;z-index:1001;text-decoration:none}
-.banner ul {position:absolute;list-style-type:none;z-index:1002;margin:0; padding:0; bottom:9px; right:5px;}
-.banner ul li {float:left;height:8px;width:8px;border-radius:10px;margin-left:5px;border:1px solid white;cursor:pointer;}
-.banner ul li.on{ background-color:white;}
-.banner_list img {border:0px;height:50%}
-.banner_list a{position:absolute; }
-/*I am genius and idiot!*/
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+    <title>Untitled Document</title>
 
-/*NishiSB*/
-/*Nihao*/
-/*save both*/
-/*Nibuhao*/
-</style>
-<script type="text/javascript" language="javascript">
-window.onload=function(){
-	//
-	picscroll.scroll(5,"banner_list","list","banner_info");
-}
-</script>
 </head>
-
 <body>
-<div id="banner" class="banner">
-	<div id="banner_bg" class="banner_bg"></div>  <!--标题背景-->
-	<a href="#" id="banner_info" class="banner_info"></a> <!--标题-->
-    <ul id="list"></ul><!--放小圆点按钮的-->
-   <div id="banner_list" class="banner_list">
-        <a href="#" target="_blank"><img src="imgs/onno.jpg" title="satoshi" alt="satoshi" /></a>
-        <a href="#" target="_blank"><img src="imgs/sho.jpg" title="Sakura Sho" alt="sho" /></a>
-        <a href="#" target="_blank"><img src="imgs/aiba.jpg" title="aiba" alt="aiba" /></a>
-        <a href="#" target="_blank"><img src="imgs/nino.jpg" title="nino" alt="nino" /></a>
-       <a href="#" target="_blank"><img src="imgs/jun.jpg" title="jun" alt="jun" /></a>
+<script type="text/javascript">
+    /*
+     * param1 Array
+     * param2 Array
+     * return true or false
+     */
+    function arraysSimilar(arr1, arr2){
+        if(!(arr1 instanceof  Array)) return false;
+        if(!(arr2 instanceof Array)) return false;
 
-   </div>
+        if(arr1) {//非空数组
+            var a_length = arr1.length;
+            var b_length = arr2.length;
+            var result = true;
+            //长度不等，返回false
+            if (a_length != b_length) {
+                return false;
+            }
 
-</div>
+            else {
+                var a_types = {};
 
+                for (var i = 0; i < a_length; i++) {
+                    if (typeof arr1[i] == "object") {
+                        if (arr1[i] === null) {
+                            a_types["null"] = true;
+                        }
+                        else if (arr1[i] instanceof Array) {
+                            a_types["Array"] = true;
+                        }
+                        else if (arr1[i] instanceof Window) {
+                            a_types["Window"] = true;
+                        }
+                        else if (arr1[i] instanceof Date) {
+                            a_types["date"] = true;
+                        }
+                        else {
+                            a_types["object"] = true;
+                        }
+                    }
+                    //基本类型
+                    else {
+                        a_types[typeof(arr1[i])] = true;
+                    }
+                }
+
+                for (var j = 0; j < b_length; j++) {
+                    var type = "";
+                    if (typeof arr2[j] == "object") {
+                        if (arr2[j] === null) {
+                            type = "null";
+                        }
+                        else if (arr2[j] instanceof Array) {
+                            type = "Array";
+                        }
+                        else if (arr2[j] instanceof Window) {
+                            type = "Window";
+                        }
+                        else if (arr2[j] instanceof Date) {
+                            type = "date";
+                        }
+                        else {
+                            type = "object";
+                        }
+                    }
+                    else {
+                        type = typeof(arr2[j]);
+                    }
+                    if (a_types[type] != true) {
+                        result = false;
+                        break;
+                    }
+                    else {
+                        a_types[type] = false;
+                        result = true;
+                        continue;
+                    }
+                }
+                return result;
+            }
+        }
+        else{//空数组
+            if(!arr2) return true;
+            return false;
+
+        }
+    }
+</script>
+<script src="testData.js"></script>
 </body>
 </html>
