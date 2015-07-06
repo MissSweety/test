@@ -1,0 +1,51 @@
+@color: #dd2431;
+@light-color: @color + #111;
+@height:40px;
+@padding:5px;
+@bgcolor:#cb2;
+.roundcorners(@radius:3px){
+  -moz-border-radius: @radius;
+  -webkit-border-radius:@radius;
+  border-radius:@radius;
+}
+.boxShadow(@x:5px,@y:0,@blur:3px,@color:#000){
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+/*========应用==========*/
+#header{
+  background:@light-color;
+  .roundcorners;
+  height:@height;
+  .boxShadow;
+  padding:@padding;
+}
+#footer{
+  .roundcorners(6px);
+  height:@height+30px;
+  background:@color;
+  width:98%;
+  position:absolute;
+  bottom:@height+30px;
+}
+
+#content{
+  background: @bgcolor;
+  float:left;
+  h1{
+      font-size:30px;
+      font-weight:bold;
+      color:gray;
+  }
+  a {
+        color: #fff;
+        text-decoration:none;
+        &:hover{
+           color:@color;
+           text-decoration: underline;
+        }
+
+  }
+p {   display:inline;
+font-size:20px;}}
