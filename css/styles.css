@@ -1,0 +1,150 @@
+/*==============for css 伪类===================*/
+#imgDiv{
+    padding:10px;
+    width:auto;
+    margin-left:30px;
+}
+ul li {
+    float:left;
+    list-style: none;
+    height:300px;
+    width:300px;
+    position:relative;
+    margin-right:20px;
+    padding:10px;
+    box-shadow:2px 2px 4px #888;
+}
+ul li:hover .cover{
+    display:block;
+}
+img{
+    width:100%;
+}
+.cover{
+    display:none;
+    height:298px;
+    width:298px;
+    position:absolute;
+    top:10px;
+    left:10px;
+    border:2px dotted red;
+}
+.cover:before{
+    border-left:2px solid #fff;
+    border-right:2px solid white;
+    position:absolute;
+    top:30px;
+    width:298px;
+    content:'';
+    left:-2px;
+    height:238px;
+}
+.cover:after{
+    border-top:2px solid #fff;
+    border-bottom:2px solid white;
+    position:absolute;
+    top:-2px;
+    width:238px;
+    content:'';
+    left:30px;
+    height:298px;
+}
+#div1{background:#222;width:300px;height:300px;margin:0 auto;color:white}
+#div2{background:dodgerblue;width:200px;height:200px;margin:25px auto;}
+#div3{background:palevioletred;width:50px;height:50px;margin:50px auto;}
+
+#star-six {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+    position: relative;
+}
+#star-six:after {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid red;
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: -50px;
+}
+#demo {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    position: relative;
+    border: 2px solid #333;
+}
+
+#demo:after, #demo:before {
+    border: solid transparent;
+    content: ' ';
+    height: 0;
+    left: 100%;
+    position: absolute;
+    width: 0;
+}
+
+#demo:after {
+    border-width: 10px;
+    border-left-color: #fff;
+    top: 20px;
+}
+
+#demo:before {
+    border-width: 12px;
+    border-left-color: #000;
+    top: 18px;
+}
+#sanjiao{
+    width:0;
+    height:0;
+    position:relative;
+    border-left:10px solid #000;
+    border-top:10px solid #fff;
+    border-bottom:10px solid #fff;
+}
+#sanjiao:before{
+    content:"";
+    border-width: 10px;
+    border-left-color: #fff;
+    top: 20px;
+}
+#yin-yang {
+    width: 96px;
+    height: 48px;
+    background: #eee;
+    border-color: red;
+    border-style: solid;
+    border-width: 2px 2px 50px 2px;
+    border-radius: 100%;
+    position: relative;
+}
+
+#yin-yang:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: #eee;
+    border: 18px solid red;
+    border-radius: 100%;
+    width: 12px;
+    height: 12px;
+}
+
+#yin-yang:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: red;
+    border: 18px solid #eee;
+    border-radius:100%;
+    width: 12px;
+    height: 12px;
+}
