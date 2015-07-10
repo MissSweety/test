@@ -48,7 +48,7 @@ var picscroll = function() {
 	return {
 		//count:图片数量，wrapId:包裹图片的DIV,ulId:按钮DIV,infoId：信息栏
 		scroll : function(count,wrapId,ulId,infoId) {
-			var self=this;//指代这个对象babyzone,包括里面的所有方法和属性，有num,info,img,scroll,fade
+			var self=this;//指代这个对象picscroll,包括里面的所有方法和属性，有num,info,img,scroll,fade
 			//console.log(self);
 			var targetIdx=0;      //目标图片序号
 			var curIndex=0;       //现在图片序号
